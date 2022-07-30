@@ -1,0 +1,141 @@
+/* Start of global styling */
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Cairo', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+:root {
+    scroll-behavior : smooth;
+    --main-color: #2FA3F5;
+    --main-padding-top: 30px;
+    --main-padding-bottom: 90px;
+
+}
+
+body i{
+  font-family:'FontAwesome'!important;
+}
+
+.container {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/* Start of title component */
+
+.component {
+  width: fit-content;
+  margin: 60px auto;
+  padding: 10px 20px;
+  border: 2px solid black;
+  letter-spacing: 0.5px;
+  position: relative;
+  z-index: 1;
+}
+
+.component::before,
+.component::after {
+  content: "";
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--main-color);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: 0.3s;
+}
+
+.component::before {
+  left: -30px;
+}
+
+.component::after {
+  right: -30px;
+}
+
+.component:hover::before,
+.component:hover::after {
+  z-index: -1;
+  transition: 0.3s;
+  animation: 0.5s linear 1 forwards;
+}
+
+.component:hover::before {
+  animation-name: move-left;
+}
+
+.component:hover::after {
+  animation-name: move-right;
+}
+
+@keyframes move-left {
+  50% {
+    left: 0;
+    border-radius: 0;
+  }
+
+  100% {
+    left: 0;
+    border-radius: 0;
+    width: 51%;
+    height: 101%;
+  }
+  
+}
+
+@keyframes move-right {
+  50% {
+    right: 0;
+    border-radius: 0;
+  }
+
+  100% {
+    right: 0;
+    border-radius: 0;
+    width: 51%;
+    height: 101%;
+  }
+  
+}
+
+.component:hover {
+  transition-delay: 0.5s;
+  border-color: white;
+  color: white;
+}
+
+/* End of title component */
+
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+/* End of global styling */
